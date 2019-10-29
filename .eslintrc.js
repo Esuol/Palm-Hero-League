@@ -6,8 +6,17 @@ module.exports = {
         'plugin:@typescript-eslint/recommended',
         'eslint-config-alloy/typescript',
         'plugin:prettier/recommended',
+        "eslint:recommended",
+        "plugin:react/recommended"
+
     ],
     plugins: ['@typescript-eslint', 'react', 'react-native'],
+    parserOptions: {
+        "ecmaFeatures": {
+          "jsx": true,
+          "tsx": true,
+        }
+    },
     rules: {
         indent: [
             2,
@@ -30,6 +39,10 @@ module.exports = {
             {
                 null: 'ignore',
             },
+        ],
+        "react/jsx-indent": [
+            "error",
+            4,
         ],
         'react-native/no-unused-styles': 2,
         'react-native/split-platform-components': 2,
