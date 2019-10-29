@@ -31,6 +31,10 @@ module.exports = {
         'react-native/no-inline-styles': 0,
         'react-native/no-color-literals': 0,
         'react-native/no-single-element-style-arrays': 0,
+        'no-console': 'off',
+        'no-undef': 'off',
+        'no-useless-constructor': 'off',
+        'react/jsx-filename-extension': 'off',
     },
     // 跟路径引入
     settings: {

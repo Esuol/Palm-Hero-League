@@ -7058,11 +7058,6 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.1, rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-app@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.npmjs.org/react-app/-/react-app-1.1.2.tgz#ae608159bdbdb166bc5fcc9c0d97b2219365dc1f"
-  integrity sha1-rmCBWb29sWa8X8ycDZeyIZNl3B8=
-
 react-deep-force-update@^1.0.0:
   version "1.1.2"
   resolved "http://registry.npm.souche-inc.com/react-deep-force-update/download/react-deep-force-update-1.1.2.tgz#3d2ae45c2c9040cbb1772be52f8ea1ade6ca2ee1"
