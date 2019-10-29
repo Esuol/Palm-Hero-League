@@ -1,7 +1,12 @@
 module.exports = {
     root: true,
     parser: '@typescript-eslint/parser',
-    extends: ['@react-native-community', 'plugin:@typescript-eslint/recommended', 'eslint-config-alloy/typescript'],
+    extends: [
+        '@react-native-community',
+        'plugin:@typescript-eslint/recommended',
+        'eslint-config-alloy/typescript',
+        'plugin:prettier/recommended',
+    ],
     plugins: ['@typescript-eslint', 'react', 'react-native'],
     rules: {
         indent: [
@@ -35,6 +40,12 @@ module.exports = {
         'no-undef': 2,
         'no-useless-constructor': 2,
         'react/jsx-filename-extension': [1, {extensions: ['.js', '.jsx', 'ts', 'tsx']}],
+        // 強制在箭頭函數中 "xxx() => {}"
+        'arrow-spacing': ['error', {before: true, after: true}],
+        // 在冒號後要加上空格
+        'key-spacing': ['error', {beforeColon: false}],
+        // 不允許改變用const聲明的變量
+        'no-const-assign': 'error',
     },
     // 跟路径引入
     settings: {
