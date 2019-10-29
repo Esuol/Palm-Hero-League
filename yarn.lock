@@ -1322,7 +1322,7 @@
   resolved "http://registry.npm.souche-inc.com/@types/lodash/download/@types/lodash-4.14.144.tgz#12e57fc99064bce45e5ab3c8bc4783feb75eab8e"
   integrity sha1-EuV/yZBkvOReWrPIvEeD/rdeq44=
 
-"@types/minimatch@*":
+"@types/minimatch@*", "@types/minimatch@^3.0.3":
   version "3.0.3"
   resolved "http://registry.npm.souche-inc.com/@types/minimatch/download/@types/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha1-PcoOPzOyAPx9ETnAzZbBJoyt/Z0=
@@ -1758,6 +1758,11 @@ arr-union@^3.1.0:
   resolved "http://registry.npm.souche-inc.com/arr-union/download/arr-union-3.1.0.tgz#e39b09aea9def866a8f206e288af63919bae39c4"
   integrity sha1-45sJrqne+Gao8gbiiK9jkZuuOcQ=
 
+array-differ@^3.0.0:
+  version "3.0.0"
+  resolved "http://registry.npm.souche-inc.com/array-differ/download/array-differ-3.0.0.tgz#3cbb3d0f316810eafcc47624734237d6aee4ae6b"
+  integrity sha1-PLs9DzFoEOr8xHYkc0I31q7krms=
+
 array-equal@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.souche-inc.com/array-equal/download/array-equal-1.0.0.tgz#8c2a5ef2472fd9ea742b04c77a75093ba2757c93"
@@ -1805,6 +1810,11 @@ array-unique@^0.3.2:
   version "0.3.2"
   resolved "http://registry.npm.souche-inc.com/array-unique/download/array-unique-0.3.2.tgz#a894b75d4bc4f6cd679ef3244a9fd8f46ae2d428"
   integrity sha1-qJS3XUvE9s1nnvMkSp/Y9Gri1Cg=
+
+arrify@^2.0.1:
+  version "2.0.1"
+  resolved "http://registry.npm.souche-inc.com/arrify/download/arrify-2.0.1.tgz#c9655e9331e0abcd588d2a7cad7e9956f66701fa"
+  integrity sha1-yWVekzHgq81YjSp8rX6ZVvZnAfo=
 
 art@^0.10.0:
   version "0.10.3"
@@ -3321,7 +3331,7 @@ execa@^1.0.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-execa@^2.0.3:
+execa@^2.0.3, execa@^2.1.0:
   version "2.1.0"
   resolved "http://registry.npm.souche-inc.com/execa/download/execa-2.1.0.tgz#e5d3ecd837d2a60ec50f3da78fd39767747bbe99"
   integrity sha1-5dPs2DfSpg7FDz2nj9OXZ3R7vpk=
@@ -4225,7 +4235,7 @@ ignore@^4.0.6:
   resolved "http://registry.npm.souche-inc.com/ignore/download/ignore-4.0.6.tgz#750e3db5862087b4737ebac8207ffd1ef27b25fc"
   integrity sha1-dQ49tYYgh7RzfrrIIH/9HvJ7Jfw=
 
-ignore@^5.0.5, ignore@^5.1.1:
+ignore@^5.0.5, ignore@^5.1.1, ignore@^5.1.4:
   version "5.1.4"
   resolved "http://registry.npm.souche-inc.com/ignore/download/ignore-5.1.4.tgz#84b7b3dbe64552b6ef0eca99f6743dbec6d97adf"
   integrity sha1-hLez2+ZFUrbvDsqZ9nQ9vsbZet8=
@@ -6046,6 +6056,11 @@ morgan@^1.9.0:
     on-finished "~2.3.0"
     on-headers "~1.0.1"
 
+mri@^1.1.4:
+  version "1.1.4"
+  resolved "http://registry.npm.souche-inc.com/mri/download/mri-1.1.4.tgz#7cb1dd1b9b40905f1fac053abe25b6720f44744a"
+  integrity sha1-fLHdG5tAkF8frAU6viW2cg9EdEo=
+
 ms@2.0.0:
   version "2.0.0"
   resolved "http://registry.npm.souche-inc.com/ms/download/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -6060,6 +6075,17 @@ ms@^2.1.1:
   version "2.1.2"
   resolved "http://registry.npm.souche-inc.com/ms/download/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha1-0J0fNXtEP0kzgqjrPM0YOHKuYAk=
+
+multimatch@^4.0.0:
+  version "4.0.0"
+  resolved "http://registry.npm.souche-inc.com/multimatch/download/multimatch-4.0.0.tgz#8c3c0f6e3e8449ada0af3dd29efb491a375191b3"
+  integrity sha1-jDwPbj6ESa2grz3SnvtJGjdRkbM=
+  dependencies:
+    "@types/minimatch" "^3.0.3"
+    array-differ "^3.0.0"
+    array-union "^2.1.0"
+    arrify "^2.0.1"
+    minimatch "^3.0.4"
 
 mute-stream@0.0.7:
   version "0.0.7"
@@ -6900,6 +6926,18 @@ pretty-format@^24.7.0, pretty-format@^24.9.0:
     ansi-regex "^4.0.0"
     ansi-styles "^3.2.0"
     react-is "^16.8.4"
+
+pretty-quick@^2.0.0:
+  version "2.0.0"
+  resolved "http://registry.npm.souche-inc.com/pretty-quick/download/pretty-quick-2.0.0.tgz#fe3cf9b677c40e2ae96244f515239db425040a7a"
+  integrity sha1-/jz5tnfEDirpYkT1FSOdtCUECno=
+  dependencies:
+    chalk "^2.4.2"
+    execa "^2.1.0"
+    find-up "^4.1.0"
+    ignore "^5.1.4"
+    mri "^1.1.4"
+    multimatch "^4.0.0"
 
 private@^0.1.6:
   version "0.1.8"

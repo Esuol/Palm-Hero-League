@@ -12,10 +12,10 @@ const ClearText: React.SFC = () => {
         <View>
             <TextInput
                 ref={component => _textInput = component}
-                style={{height: 50, width: 200, marginHorizontal: 20, borderWidth: 1, borderColor: '#ccc'}}
+                style={{height: 50, width: 200, marginHorizontal: 20,     borderWidth: 1, borderColor: '#ccc'}}
             />
             <TouchableOpacity onPress={claerText}>
-                  <Text>Clear text</Text>
+                <Text>Clear text</Text>
             </TouchableOpacity>
         </View>
 
