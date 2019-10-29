@@ -9,7 +9,8 @@
     "test": "jest",
     "lint": "eslint .",
     "react-devtools": "react-devtools",
-    "eslint": "eslint src --ext .ts,.tsx"
+    "eslint": "eslint src --ext .ts,.tsx",
+    "precommit": "NODE_ENV=production lint-staged"
   },
   "dependencies": {
     "@expo/vector-icons": "^10.0.6",
