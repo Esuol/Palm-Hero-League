@@ -67,21 +67,10 @@
     "pre-commit": "lint-staged"
    },
    "lint-staged": {
-      "*.js": [
-        "eslint --fix 'src'",
-        "git add"
-       ],
-       "*.jsx": [
-        "eslint --fix 'src'",
-        "git add"
-       ],
-       "*.ts": [
-        "eslint --fix 'src'",
-        "git add"
-       ],
-       "*.tsx": [
-        "eslint src --ext .ts,.tsx",
-        "git add"
-       ]
-    }
+    "*.{js,jsx,ts,tsx}": [
+      "pretty-quick --staged",
+      "eslint src/ --fix",
+      "git add"
+    ]
+  }
 }
