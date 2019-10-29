@@ -2,7 +2,7 @@ module.exports = {
     root: true,
     parser: '@typescript-eslint/parser',
     extends: ['@react-native-community', 'plugin:@typescript-eslint/recommended', 'eslint-config-alloy/typescript'],
-    plugins: ['@typescript-eslint', 'react'],
+    plugins: ['@typescript-eslint', 'react', 'react-native'],
     rules: {
         indent: [
             2,
