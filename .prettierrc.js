@@ -7,13 +7,6 @@ module.exports = {
     printWidth: 120,
     requirePragma: true, // 是否要注释来决定是否格式化代码
     arrowParens: 'avoid', // (x) => {} 是否要有小括号
-    proseWrap: "always",
-    // parser: '@typescript-eslint/parser',
-    // extends: [
-    //   'plugin:@typescript-eslint/recommended',
-    //   'react-app',
-    //   'plugin:prettier/recommended',
-    // ],
-    // plugins: ["@typescript-eslint", 'react'],
+    proseWrap: "always",  // 是否要換行
     rules: {},
 };
