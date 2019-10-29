@@ -11,7 +11,22 @@ module.exports = {
           {
               "SwitchCase": 2
           }
-        ]
+        ],
+        "semi": [
+            2,
+            "always",
+            {
+                "omitLastInOneLineBlock": true
+            }
+        ],
+         // @fixable 必须使用 === 或 !==，禁止使用 == 或 !=，与 null 比较时除外
+         'eqeqeq': [
+            'error',
+            'always',
+            {
+                null: 'ignore'
+            }
+        ],
   },
   // 跟路径引入
   settings: {
