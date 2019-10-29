@@ -80,7 +80,7 @@
         "git add"
        ],
        "*.tsx": [
-        "eslint --fix 'src'",
+        "eslint src --ext .ts,.tsx",
         "git add"
        ]
     }
