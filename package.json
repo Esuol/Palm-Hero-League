@@ -62,5 +62,26 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+   },
+   "lint-staged": {
+      "*.js": [
+        "eslint --fix 'src'",
+        "git add"
+       ],
+       "*.jsx": [
+        "eslint --fix 'src'",
+        "git add"
+       ],
+       "*.ts": [
+        "eslint --fix 'src'",
+        "git add"
+       ],
+       "*.tsx": [
+        "eslint --fix 'src'",
+        "git add"
+       ]
+    }
 }
