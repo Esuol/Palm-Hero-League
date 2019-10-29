@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "allowJs": true,
+    "checkJs": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "isolatedModules": true,
@@ -10,9 +12,8 @@
     "noEmit": true,
     "strict": true,
     "target": "esnext",
-    "baseUrl": ".",
     "paths": {
-      "*": ["*", "src/*"],
+      "~/*": ["src/*"],
       "tests": ["tests/*"]
     }
   },

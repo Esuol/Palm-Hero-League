@@ -14,4 +14,8 @@ module.exports = {
       },
     }),
   },
+  // 支持jsx开发
+  resolver: {
+    sourceExts: ['ts', 'tsx', 'js', 'jsx', 'json', 'mjs'],
+  },
 };
