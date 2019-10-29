@@ -26,6 +26,11 @@ module.exports = {
                 null: 'ignore',
             },
         ],
+        'react-native/no-unused-styles': 2,
+        'react-native/split-platform-components': 2,
+        'react-native/no-inline-styles': 0,
+        'react-native/no-color-literals': 0,
+        'react-native/no-single-element-style-arrays': 0,
     },
     // 跟路径引入
     settings: {
