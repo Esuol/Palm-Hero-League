@@ -16,7 +16,7 @@ const App: React.SFC = () => {
             <StatusBar barStyle="dark-content" />
             <SafeAreaView>
                 <View>
-                    <Text>首页</Text>
+                    <Text>首页Page</Text>
                 </View>
             </SafeAreaView>
         </>
