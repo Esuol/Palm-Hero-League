@@ -6,16 +6,16 @@
  */
 
 module.exports = {
-  transformer: {
-    getTransformOptions: async () => ({
-      transform: {
-        experimentalImportSupport: false,
-        inlineRequires: false,
-      },
-    }),
-  },
-  // 支持jsx开发
-  resolver: {
-    sourceExts: ['ts', 'tsx', 'js', 'jsx', 'json', 'mjs'],
-  },
+    transformer: {
+        getTransformOptions: async () => ({
+            transform: {
+                experimentalImportSupport: false,
+                inlineRequires: false,
+            },
+        }),
+    },
+    // 支持jsx开发
+    resolver: {
+        sourceExts: ['ts', 'tsx', 'js', 'jsx', 'json', 'mjs'],
+    },
 };
