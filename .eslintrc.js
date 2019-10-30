@@ -8,7 +8,6 @@ module.exports = {
         'plugin:prettier/recommended',
         "eslint:recommended",
         "plugin:react/recommended"
-
     ],
     plugins: ['@typescript-eslint', 'react', 'react-native'],
     parserOptions: {
@@ -49,9 +48,18 @@ module.exports = {
         'react-native/no-inline-styles': 0,
         'react-native/no-color-literals': 0,
         'react-native/no-single-element-style-arrays': 0,
+        "new-cap": 0,
+        "react/jsx-uses-vars": 1,
+        "no-unused-vars": 0,
         'no-console': 2,
         'no-undef': 2,
         'no-useless-constructor': 2,
+        "no-use-before-define": [1, "nofunc"],
+        "no-underscore-dangle": 0,
+        "dot-notation": 0,
+        "comma-dangle": 0,
+        "curly": [1, "multi-line"],
+        "quotes": [0, "single"],
         'react/jsx-filename-extension': [1, {extensions: ['.js', '.jsx', 'ts', 'tsx']}],
         // 強制在箭頭函數中 "xxx() => {}"
         'arrow-spacing': ['error', {before: true, after: true}],
