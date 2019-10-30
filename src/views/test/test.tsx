@@ -4,7 +4,7 @@ import {TextInput, Text, TouchableOpacity, View} from 'react-native';
 const ClearText: React.SFC = () => {
     let _textInput: HTMLInputElement;
 
-    const claerText = () => {
+    const claerText: () => void = () => {
         _textInput.setNativeProps({text: ''});
     };
 
