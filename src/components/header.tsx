@@ -21,9 +21,9 @@ const S = StyleSheet.create({
         width: '15%'
     },
     image: {
-        width: 50,
-        height: 50,
-        borderRadius: 25,
+        width: 40,
+        height: 40,
+        borderRadius: 20,
     },
     icon: {
         flex: 1,
