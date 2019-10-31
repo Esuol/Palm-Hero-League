@@ -6,25 +6,19 @@ interface Props {
     tabs: { title: string; type: string }[];
 }
 
-const S = StyleSheet.create({
-    wrap: {
-        width: '120%',
-        flex: 1,
-        marginTop: 15,
-    }
-});
 
 const Tab: React.SFC<Props> = (props: Props) => {
     const { tabs } = props;
+
+    const tabClick = (tab: any, index: number) => {
+        // console.log(tab);
+        // console.log(index);
+    };
+
     return (
         <View style={{ flex: 1 }}>
-            <Tabs tabs={tabs} initialPage={1} tabBarPosition="top">
-                <ScrollView>
-                    <View style={S.wrap}>
-                        <Text>tab</Text>
-                    </View>
-                </ScrollView>
-            </Tabs>
+            <Tabs tabs={tabs} initialPage={1} tabBarPosition="top" tabBarActiveTextColor="#a97937"
+                tabBarUnderlineStyle={ {backgroundColor: '#a97937', height: 2, } } onTabClick={tabClick} />
         </View>
     );
 };
