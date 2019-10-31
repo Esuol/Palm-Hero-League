@@ -1,7 +1,18 @@
 import React from "react";
+import {View, SafeAreaView, ScrollView} from 'react-native';
+import Header from '~/components/header';
 
-import Screen from "../screen/Screen";
+const NewsScreen = () => {
+    return (
+        <SafeAreaView>
+            <ScrollView>
+                <View>
+                    <Header />
+                </View>
+            </ScrollView>
+        </SafeAreaView>
 
-const NewsScreen = () => <Screen name="资讯" />;
+    );
+};
 
 export default NewsScreen;

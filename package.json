@@ -13,6 +13,7 @@
         "precommit": "NODE_ENV=production lint-staged"
     },
     "dependencies": {
+        "@ant-design/react-native": "^3.2.0",
         "@expo/vector-icons": "^10.0.6",
         "@react-native-community/datetimepicker": "^2.1.0",
         "@react-native-community/masked-view": "^0.1.1",
@@ -21,10 +22,12 @@
         "@types/react": "^16.9.9",
         "@types/react-native": "^0.60.21",
         "@types/react-test-renderer": "^16.9.1",
+        "babel-plugin-import": "^1.12.2",
         "eslint-plugin-react": "^7.16.0",
         "expo": "^35.0.0",
         "react": "16.9.0",
         "react-devtools": "^4.2.0",
+        "react-dom": "^16.11.0",
         "react-native": "0.61.1",
         "react-native-gesture-handler": "^1.5.0",
         "react-native-pose": "^0.9.1",
