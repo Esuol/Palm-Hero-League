@@ -15,45 +15,46 @@ interface Props {
     tintColor: string;
 }
 
-const tabbarFunc: (props: Props, name: string) => React.ReactNode  = (props: Props, name: string) => <Icon name={name} color={props.tintColor} />;
+const tabbarFunc: (props: Props, name: string, label: string) => React.ReactNode  =
+(props: Props, name: string, label: string) => <Icon name={name} label={label} color={props.tintColor} />;
 
 const TabNavigator = createBottomTabNavigator({
     NewsScreen: {
         ...NewsScreen,
         navigationOptions: {
-            tabBarIcon: (props: Props) => tabbarFunc(props, "home")
+            tabBarIcon: (props: Props) => tabbarFunc(props, "home", "资讯")
         }
     },
     AllyScreen: {
         ...AllyScreen,
         navigationOptions: {
-            tabBarIcon: (props: Props) => tabbarFunc(props, "search")
+            tabBarIcon: (props: Props) => tabbarFunc(props, "search", "盟友圈")
         }
     },
     TVScreen: {
         ...TVScreen,
         navigationOptions: {
-            tabBarIcon: (props: Props) =>  tabbarFunc(props, "favorites")
+            tabBarIcon: (props: Props) =>  tabbarFunc(props, "favorites", "电视台")
         }
     },
     ShopScreen: {
         ...ShopScreen,
         navigationOptions: {
-            tabBarIcon: (props: Props) => tabbarFunc(props, "profile")
+            tabBarIcon: (props: Props) => tabbarFunc(props, "profile", "商城")
         }
     },
     RecordScreen: {
         ...RecordScreen,
         navigationOptions: {
-            tabBarIcon: (props: Props) => tabbarFunc(props, "profile")
+            tabBarIcon: (props: Props) => tabbarFunc(props, "profile", "战绩")
         }
     }
 },
 {
     tabBarComponent: Tabbar,
     tabBarOptions: {
-        activeTintColor: "#4F4F4F",
-        inactiveTintColor: "#ddd"
+        activeTintColor: "#A97937",
+        inactiveTintColor: "#83847E"
     }
 });
 

@@ -36,7 +36,7 @@ const Scaler = posed.View({
 const S = StyleSheet.create({
     container: {
         flexDirection: "row",
-        height: 52,
+        height: 72,
         elevation: 2,
         alignItems: "center"
     },
@@ -48,10 +48,10 @@ const S = StyleSheet.create({
         alignItems: "center"
     },
     spotLightInner: {
-        width: 48,
-        height: 48,
-        backgroundColor: "#ee0000",
-        borderRadius: 24
+        width: 68,
+        height: 68,
+        // backgroundColor: '#000',
+        borderRadius: 20
     },
     scaler: { flex: 1, alignItems: "center", justifyContent: "center" }
 });
