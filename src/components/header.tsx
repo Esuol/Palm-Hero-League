@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import { WingBlank, Icon } from '@ant-design/react-native';
+import Tabs from './tab';
 
 const S = StyleSheet.create({
     container: {
@@ -31,8 +32,13 @@ const S = StyleSheet.create({
     }
 });
 
+interface Props {
+    tabs: { title: string; type: string }[];
+}
 
-const Header = () => {
+
+const Header: React.SFC<Props> = (props: Props) => {
+    const { tabs } = props;
     return (
         <View style={S.container}>
             <WingBlank size="md" style={S.wrap}>
@@ -43,7 +49,7 @@ const Header = () => {
                     />
                 </View>
                 <View style={S.center}>
-                    <Text>custom</Text>
+                    <Tabs tabs={tabs} />
                 </View>
                 <View style={S.right}>
                     <Icon style={S.icon} name="wechat" size="lg" color="#a97937" />
