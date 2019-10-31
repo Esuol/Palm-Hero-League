@@ -4,13 +4,12 @@ import {createBottomTabNavigator} from 'react-navigation-tabs';
 import Icon from "~/components/Icons";
 import Tabbar from "~/components/Tabbar";
 
+import NewsScreen from './news';
+import AllyScreen from './ally';
+import TVScreen from './tv';
+import ShopScreen from './shop';
+import RecordScreen from './record';
 
-import {
-    HomeScreen,
-    SearchScreen,
-    FavoritesScreen,
-    ProfileScreen
-} from "~/views/screen";
 
 interface Props {
     tintColor: string;
@@ -19,26 +18,32 @@ interface Props {
 const tabbarFunc: (props: Props, name: string) => React.ReactNode  = (props: Props, name: string) => <Icon name={name} color={props.tintColor} />;
 
 const TabNavigator = createBottomTabNavigator({
-    HomeScreen: {
-        screen: HomeScreen,
+    NewsScreen: {
+        ...NewsScreen,
         navigationOptions: {
             tabBarIcon: (props: Props) => tabbarFunc(props, "home")
         }
     },
-    SearchScreen: {
-        screen: SearchScreen,
+    AllyScreen: {
+        ...AllyScreen,
         navigationOptions: {
             tabBarIcon: (props: Props) => tabbarFunc(props, "search")
         }
     },
-    FavoritesScreen: {
-        screen: FavoritesScreen,
+    TVScreen: {
+        ...TVScreen,
         navigationOptions: {
             tabBarIcon: (props: Props) =>  tabbarFunc(props, "favorites")
         }
     },
-    ProfileScreen: {
-        screen: ProfileScreen,
+    ShopScreen: {
+        ...ShopScreen,
+        navigationOptions: {
+            tabBarIcon: (props: Props) => tabbarFunc(props, "profile")
+        }
+    },
+    RecordScreen: {
+        ...RecordScreen,
         navigationOptions: {
             tabBarIcon: (props: Props) => tabbarFunc(props, "profile")
         }

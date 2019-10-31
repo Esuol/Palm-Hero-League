@@ -19,7 +19,7 @@ const S = StyleSheet.create({
 
 const Screen: React.SFC<Props>  = (props: Props) => (
     <View style={S.container}>
-        <Text style={S.text}>This is the {props.name} screen</Text>
+        <Text style={S.text}>{props.name} 页</Text>
     </View>
 );
 
