@@ -1,5 +1,5 @@
 import React from "react";
-import {View, SafeAreaView, ScrollView} from 'react-native';
+import {View, SafeAreaView, ScrollView, StatusBar} from 'react-native';
 import Header from '~/components/header';
 
 const NewsScreen = () => {
@@ -11,7 +11,6 @@ const NewsScreen = () => {
                 </View>
             </ScrollView>
         </SafeAreaView>
-
     );
 };
 

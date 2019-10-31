@@ -13,6 +13,7 @@
         "precommit": "NODE_ENV=production lint-staged"
     },
     "dependencies": {
+        "@ant-design/icons-react-native": "^1.0.2",
         "@ant-design/react-native": "^3.2.0",
         "@expo/vector-icons": "^10.0.6",
         "@react-native-community/datetimepicker": "^2.1.0",

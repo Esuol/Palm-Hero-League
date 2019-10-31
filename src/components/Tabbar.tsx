@@ -51,7 +51,7 @@ const S = StyleSheet.create({
         width: 68,
         height: 68,
         // backgroundColor: '#000',
-        borderRadius: 20
+        borderRadius: 26
     },
     scaler: { flex: 1, alignItems: "center", justifyContent: "center" }
 });
