@@ -46,7 +46,7 @@ const TabNavigator = createBottomTabNavigator({
     RecordScreen: {
         ...RecordScreen,
         navigationOptions: {
-            tabBarIcon: (props: Props) => tabbarFunc(props, "profile", "战绩")
+            tabBarIcon: (props: Props) => tabbarFunc(props, "record", "战绩")
         }
     }
 },

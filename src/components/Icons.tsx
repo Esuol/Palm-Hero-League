@@ -9,10 +9,11 @@ interface Props {
 }
 
 enum iconMap  {
-    home = "♡",
-    search = "♢",
-    favorites = "♧",
-    profile = "♤"
+    home = "💻",
+    search = "👬",
+    favorites = "📺",
+    profile = "🛒",
+    record= "👋"
 }
 
 
