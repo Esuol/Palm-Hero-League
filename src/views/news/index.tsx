@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
-import {View, SafeAreaView, ScrollView, StatusBar, Text} from 'react-native';
+import {View, SafeAreaView, ScrollView} from 'react-native';
 import Header from '~/components/header';
 import {tabs} from './const';
 import {TabPrame} from '~/store/action/common';

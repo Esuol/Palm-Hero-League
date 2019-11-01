@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { View, Text } from 'react-native';
+import { WingBlank } from '@ant-design/react-native';
 import {TabPrame} from '~/store/action/common';
 
 interface Props {
@@ -16,9 +17,11 @@ const mapStateToProps = (state: any) => {
 const cloudPage: React.FC<Props> = (props: Props) => {
     const { tabsState } = props;
     return (
-        <View>
-            <Text>{tabsState.title}</Text>
-        </View>
+        <WingBlank style={{marginTop: 15}}>
+            <View>
+                <Text>{tabsState.title}</Text>
+            </View>
+        </WingBlank>
     );
 };
 
