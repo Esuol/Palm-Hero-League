@@ -19,7 +19,6 @@ const mapStateToProps = (state: any) => {
     };
 };
 
-
 const Tab: React.SFC<Props> = (props: Props) => {
     const { tabs, setTabAction } = props;
 

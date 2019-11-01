@@ -1,9 +1,5 @@
 export const SETTAB  = 'SETTAB';
 
-interface SetTabAction {
-    type: typeof SETTAB;
-}
-
 export interface TabPrame {
     title: string;
     key: string;
@@ -11,7 +7,7 @@ export interface TabPrame {
 
 export const SetTabAction = (data: TabPrame) => (
     {
-        type: typeof SETTAB,
+        type: SETTAB,
         data
     }
 );
