@@ -8,22 +8,15 @@
  */
 
 import React from 'react';
-import {createAppContainer} from 'react-navigation';
+import { Provider } from 'react-redux';
 import Router from '~/route/index';
+import store from '~/store';
 
-// import {SafeAreaView, View, StatusBar, Text} from 'react-native';
-// const App: React.SFC = () => {
-//     return (
-//         <>
-//             <StatusBar barStyle="dark-content" />
-//             <SafeAreaView>
-//                 <View>
-//                     <Text>首页Page</Text>
-//                 </View>
-//             </SafeAreaView>
-//         </>
-//     );
-// };
-
-const App =  () => <Router />;
+const App =  () => {
+    return (
+        <Provider store={store}>
+            <Router />
+        </Provider>
+    );
+};
 export default App;

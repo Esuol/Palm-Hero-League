@@ -4,8 +4,8 @@ interface TabState {
 }
 
 const tabsState: TabState = {
-    title: '',
-    type: ''
+    title: '推荐',
+    type: 'recommend'
 };
 
 export default tabsState;

@@ -1,18 +1,23 @@
 import React from 'react';
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import { connect } from 'react-redux';
+import { View } from 'react-native';
 import { Tabs } from '@ant-design/react-native';
+import { SetTabAction, TabPrame } from '~/store/action/common';
 
 interface Props {
     tabs: { title: string; type: string }[];
 }
 
+const mapDispatchToProps = (dispatch: any) => ({
+    setTabAction: (obj: TabPrame) => dispatch(SetTabAction(obj))
+});
+
 
 const Tab: React.SFC<Props> = (props: Props) => {
-    const { tabs } = props;
+    const { tabs, setTabAction } = props;
 
     const tabClick = (tab: any, index: number) => {
-        // console.warn(tab);
-        // console.warn(index);
+        setTabAction(tab);
     };
 
     return (
@@ -23,4 +28,4 @@ const Tab: React.SFC<Props> = (props: Props) => {
     );
 };
 
-export default Tab;
+export default connect(mapDispatchToProps)(Tab);
