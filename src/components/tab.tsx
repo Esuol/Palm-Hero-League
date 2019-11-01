@@ -26,8 +26,12 @@ const Tab: React.SFC<Props> = (props: Props) => {
 
     return (
         <View style={{ flex: 2 }}>
-            <Tabs tabs={tabs} initialPage={0} tabBarPosition="top" tabBarActiveTextColor="#a97937"
-                tabBarUnderlineStyle={ {backgroundColor: '#a97937', height: 2, } } onTabClick={tabClick} />
+            <Tabs
+                tabs={tabs} initialPage={0}
+                tabBarPosition="top"
+                tabBarActiveTextColor="#a97937"
+                tabBarUnderlineStyle={ {backgroundColor: '#a97937', height: 2, } }
+                onTabClick={tabClick} />
         </View>
     );
 };
