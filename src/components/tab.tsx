@@ -9,13 +9,17 @@ interface Props {
     setTabAction: (tab: TabPrame) => TabPrame;
 }
 
+interface State {
+    commonReducers: TabPrame;
+}
+
 const mapDispatchToProps = (dispatch: any) => ({
     setTabAction: (obj: TabPrame) => dispatch(SetTabAction(obj))
 });
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: State) => {
     return {
-        tabsState: state.commonReducers.tabsState
+        tabsState: state.commonReducers
     };
 };
 

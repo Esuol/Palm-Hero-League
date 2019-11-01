@@ -31,7 +31,11 @@ interface Props {
     tabsState: TabPrame;
 }
 
-const mapStateToProps = (state: any) => {
+interface State {
+    commonReducers: TabPrame;
+}
+
+const mapStateToProps = (state: State) => {
     return {
         tabsState: state.commonReducers
     };
