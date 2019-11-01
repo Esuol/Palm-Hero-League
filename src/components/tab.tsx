@@ -11,8 +11,8 @@ const Tab: React.SFC<Props> = (props: Props) => {
     const { tabs } = props;
 
     const tabClick = (tab: any, index: number) => {
-        // console.log(tab);
-        // console.log(index);
+        // console.warn(tab);
+        // console.warn(index);
     };
 
     return (
