@@ -7,7 +7,7 @@
  * @flow
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Provider } from 'react-redux';
 import Router from '~/route/index';
 import store from '~/store';

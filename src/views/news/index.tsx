@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState }  from "react";
 import { connect } from 'react-redux';
-import {View, SafeAreaView, ScrollView} from 'react-native';
+import {View, SafeAreaView, ScrollView, RefreshControl} from 'react-native';
 import Header from '~/components/header';
 import {tabs} from './const';
 import {TabPrame} from '~/store/action/common';
@@ -43,11 +43,28 @@ const mapStateToProps = (state: State) => {
 
 // const files = require.context('./tabPage', false, /\.tsx$/);
 
+function wait(timeout: number) {
+    return new Promise(resolve => {
+        setTimeout(resolve, timeout);
+    });
+}
+
 const NewsScreen: React.SFC<Props> = (props: Props) => {
     const { tabsState } = props;
+    const [refreshing, setRefreshing] = useState<boolean>(false);
+
+    const onRefresh = React.useCallback(() => {
+        setRefreshing(true);
+
+        wait(2000).then(() => setRefreshing(false));
+    }, []);
+
     return (
         <SafeAreaView>
-            <ScrollView>
+            <ScrollView
+                refreshControl={
+                    <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+                }>
                 <View>
                     <Header tabs={tabs} />
                     {tabs.map(item => {
