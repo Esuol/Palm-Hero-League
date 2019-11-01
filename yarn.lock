@@ -1501,6 +1501,11 @@
     "@types/unist" "*"
     "@types/vfile-message" "*"
 
+"@types/webpack-env@^1.14.1":
+  version "1.14.1"
+  resolved "http://registry.npm.souche-inc.com/@types/webpack-env/download/@types/webpack-env-1.14.1.tgz#0d8a53f308f017c53a5ddc3d07f4d6fa76b790d7"
+  integrity sha1-DYpT8wjwF8U6Xdw9B/TW+na3kNc=
+
 "@types/websql@^0.0.27":
   version "0.0.27"
   resolved "http://registry.npm.souche-inc.com/@types/websql/download/@types/websql-0.0.27.tgz#621a666a7f02018e7cbb4abab956a25736c27d71"

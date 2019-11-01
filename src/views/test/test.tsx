@@ -11,7 +11,8 @@ const ClearText: React.SFC = () => {
     return (
         <View>
             <TextInput
-                ref={node => (_textInput = node as HTMLInputElement)} style={{
+                ref={node => (_textInput = node as HTMLInputElement)}
+                style={{
                     height: 50,
                     width: 200,
                     marginHorizontal: 20,
