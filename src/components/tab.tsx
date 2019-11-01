@@ -25,8 +25,8 @@ const Tab: React.SFC<Props> = (props: Props) => {
     const tabClick = (tab: TabPrame, index: number) => {setTabAction(tab)};
 
     return (
-        <View style={{ flex: 1 }}>
-            <Tabs tabs={tabs} initialPage={1} tabBarPosition="top" tabBarActiveTextColor="#a97937"
+        <View style={{ flex: 2 }}>
+            <Tabs tabs={tabs} initialPage={0} tabBarPosition="top" tabBarActiveTextColor="#a97937"
                 tabBarUnderlineStyle={ {backgroundColor: '#a97937', height: 2, } } onTabClick={tabClick} />
         </View>
     );
