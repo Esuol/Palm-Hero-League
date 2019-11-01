@@ -5,20 +5,25 @@ import { Tabs } from '@ant-design/react-native';
 import { SetTabAction, TabPrame } from '~/store/action/common';
 
 interface Props {
-    tabs: { title: string; type: string }[];
+    tabs: TabPrame[];
+    setTabAction: (tab: TabPrame) => TabPrame;
 }
 
 const mapDispatchToProps = (dispatch: any) => ({
     setTabAction: (obj: TabPrame) => dispatch(SetTabAction(obj))
 });
 
+const mapStateToProps = (state: any) => {
+    return {
+        tabsState: state.commonReducers.tabsState
+    };
+};
+
 
 const Tab: React.SFC<Props> = (props: Props) => {
     const { tabs, setTabAction } = props;
 
-    const tabClick = (tab: any, index: number) => {
-        setTabAction(tab);
-    };
+    const tabClick = (tab: TabPrame, index: number) => {setTabAction(tab)};
 
     return (
         <View style={{ flex: 1 }}>
@@ -28,4 +33,4 @@ const Tab: React.SFC<Props> = (props: Props) => {
     );
 };
 
-export default connect(mapDispatchToProps)(Tab);
+export default connect(mapStateToProps,mapDispatchToProps)(Tab);

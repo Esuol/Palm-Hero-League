@@ -33,7 +33,7 @@ const S = StyleSheet.create({
 });
 
 interface Props {
-    tabs: { title: string; type: string }[];
+    tabs: { title: string; key: string }[];
 }
 
 

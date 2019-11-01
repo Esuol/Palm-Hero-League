@@ -1,11 +1,11 @@
 interface TabState {
     title: string;
-    type: string;
+    key: string;
 }
 
 const tabsState: TabState = {
     title: '推荐',
-    type: 'recommend'
+    key: 'recommend'
 };
 
 export default tabsState;

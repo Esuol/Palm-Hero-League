@@ -6,7 +6,7 @@ interface SetTabAction {
 
 export interface TabPrame {
     title: string;
-    type: string;
+    key: string;
 }
 
 export const SetTabAction = (data: TabPrame) => (

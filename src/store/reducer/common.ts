@@ -6,7 +6,7 @@ export default function (state = initalState, action: {type: string; data: TabPr
             case SETTAB:
                 return {
                     title: action.data.title,
-                    type: action.data.type,
+                    key: action.data.key,
                 };
             default:
                 return state;
