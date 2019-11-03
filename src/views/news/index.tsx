@@ -62,6 +62,7 @@ const NewsScreen: React.SFC<Props> = (props: Props) => {
     return (
         <SafeAreaView>
             <ScrollView
+                style={{height: '100%'}}
                 refreshControl={
                     <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
                 }>
