@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import {View, SafeAreaView, ScrollView, RefreshControl} from 'react-native';
+import { Provider, Toast } from '@ant-design/react-native';
 import Header from '~/components/header';
 import {tabs} from './const';
 import {TabPrame, PullRefresh} from '~/store/action/common';
@@ -69,30 +70,39 @@ const NewsScreen: React.SFC<Props> = (props: Props) => {
     const onRefresh = () => {
         pullRefresh(true);
 
-        wait(2000).then(() => pullRefresh(false));
+        wait(1000).then(() => {
+            pullRefresh(false);
+            Toast.success('刷新成功', 1);
+        });
     };
 
 
     return (
-        <SafeAreaView>
-            <ScrollView
-                style={{height: '100%'}}
-                refreshControl={
-                    <RefreshControl refreshing={refreshState.refreshState} onRefresh={onRefresh} />
-                }>
-                <View>
-                    <Header tabs={tabs} />
-                    {tabs.map(item => {
-                        if(item.key === tabsState.key) {
-                            const CurrentPage: React.FC = components[item.key as keyof typeof components];
-                            return (
-                                <CurrentPage />
-                            );
-                        }
-                    })}
-                </View>
-            </ScrollView>
-        </SafeAreaView>
+        <Provider>
+            <SafeAreaView>
+                <ScrollView
+                    style={{height: '100%'}}
+                    refreshControl={
+                        <RefreshControl
+                            refreshing={refreshState.refreshState}
+                            tintColor='#a97937'
+                            title= {refreshState.refreshState? '刷新中....':'下拉刷新'}
+                            onRefresh={onRefresh} />
+                    }>
+                    <View>
+                        <Header tabs={tabs} />
+                        {tabs.map(item => {
+                            if(item.key === tabsState.key) {
+                                const CurrentPage: React.FC = components[item.key as keyof typeof components];
+                                return (
+                                    <CurrentPage />
+                                );
+                            }
+                        })}
+                    </View>
+                </ScrollView>
+            </SafeAreaView>
+        </Provider>
     );
 };
 
