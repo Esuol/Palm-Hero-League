@@ -1,9 +1,9 @@
-import React, { useState }  from "react";
+import React from "react";
 import { connect } from 'react-redux';
 import {View, SafeAreaView, ScrollView, RefreshControl} from 'react-native';
 import Header from '~/components/header';
 import {tabs} from './const';
-import {TabPrame} from '~/store/action/common';
+import {TabPrame, PullRefresh} from '~/store/action/common';
 // tabs => 组件
 import RecommendPage from './tabPage/recommend';
 import CloudPage from './tabPage/cloud';
@@ -29,15 +29,29 @@ const components = {
 
 interface Props {
     tabsState: TabPrame;
+    refreshState: {
+        refreshState: boolean;
+    };
+    pullRefresh: (refreshState: boolean) => boolean;
 }
 
 interface State {
-    commonReducers: TabPrame;
+    tabReducer: TabPrame;
+    refreshReducer: {
+        refreshState: boolean;
+    };
 }
 
 const mapStateToProps = (state: State) => {
     return {
-        tabsState: state.commonReducers
+        tabsState: state.tabReducer,
+        refreshState: state.refreshReducer,
+    };
+};
+
+const mapDispatchProps = (dispatch: any) => {
+    return {
+        pullRefresh: (refreshState: boolean) => dispatch(PullRefresh(refreshState))
     };
 };
 
@@ -50,21 +64,21 @@ function wait(timeout: number) {
 }
 
 const NewsScreen: React.SFC<Props> = (props: Props) => {
-    const { tabsState } = props;
-    const [refreshing, setRefreshing] = useState<boolean>(false);
+    const { tabsState, refreshState, pullRefresh } = props;
 
-    const onRefresh = React.useCallback(() => {
-        setRefreshing(true);
+    const onRefresh = () => {
+        pullRefresh(true);
 
-        wait(2000).then(() => setRefreshing(false));
-    }, []);
+        wait(2000).then(() => pullRefresh(false));
+    };
+
 
     return (
         <SafeAreaView>
             <ScrollView
                 style={{height: '100%'}}
                 refreshControl={
-                    <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+                    <RefreshControl refreshing={refreshState.refreshState} onRefresh={onRefresh} />
                 }>
                 <View>
                     <Header tabs={tabs} />
@@ -82,4 +96,4 @@ const NewsScreen: React.SFC<Props> = (props: Props) => {
     );
 };
 
-export default connect(mapStateToProps)(NewsScreen);
+export default connect(mapStateToProps, mapDispatchProps)(NewsScreen);

@@ -10,7 +10,7 @@ interface Props {
 }
 
 interface State {
-    commonReducers: TabPrame;
+    tabReducer: TabPrame;
 }
 
 const mapDispatchToProps = (dispatch: any) => ({
@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch: any) => ({
 
 const mapStateToProps = (state: State) => {
     return {
-        tabsState: state.commonReducers
+        tabsState: state.tabReducer
     };
 };
 

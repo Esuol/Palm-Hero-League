@@ -1,8 +1,9 @@
 import {combineReducers} from 'redux';
-import commonReducers from './common';
+import {tabReducer, refreshReducer} from './common';
 
 const reducers = combineReducers({
-    commonReducers
+    tabReducer,
+    refreshReducer
 });
 
 export default reducers;

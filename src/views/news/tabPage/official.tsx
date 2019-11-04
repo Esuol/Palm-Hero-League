@@ -10,7 +10,7 @@ interface Props {
 
 const mapStateToProps = (state: any) => {
     return {
-        tabsState: state.commonReducers
+        tabsState: state.tabReducer
     };
 };
 
