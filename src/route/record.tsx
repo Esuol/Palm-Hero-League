@@ -1,5 +1,6 @@
-import RecordScreen from '../views/record';
+import RecordScreen from '../views';
 
 export default {
     screen: RecordScreen,
+    params: { name: 'record' },
 };

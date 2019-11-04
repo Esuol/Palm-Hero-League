@@ -1,5 +1,6 @@
-import NewsScreen from '../views/news';
+import NewsScreen from '../views';
 
 export default {
     screen: NewsScreen,
+    params: { name: 'news' },
 };

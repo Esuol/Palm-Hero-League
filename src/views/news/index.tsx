@@ -30,10 +30,6 @@ const components = {
 
 interface Props {
     tabsState: TabPrame;
-    refreshState: {
-        refreshState: boolean;
-    };
-    pullRefresh: (refreshState: boolean) => boolean;
 }
 
 interface State {
@@ -50,12 +46,6 @@ const mapStateToProps = (state: State) => {
     };
 };
 
-const mapDispatchProps = (dispatch: any) => {
-    return {
-        pullRefresh: (refreshState: boolean) => dispatch(PullRefresh(refreshState))
-    };
-};
-
 // const files = require.context('./tabPage', false, /\.tsx$/);
 
 function wait(timeout: number) {
@@ -65,45 +55,20 @@ function wait(timeout: number) {
 }
 
 const NewsScreen: React.SFC<Props> = (props: Props) => {
-    const { tabsState, refreshState, pullRefresh } = props;
-
-    const onRefresh = () => {
-        pullRefresh(true);
-
-        wait(1000).then(() => {
-            pullRefresh(false);
-            Toast.success('刷新成功', 1);
-        });
-    };
-
+    const { tabsState } = props;
 
     return (
-        <Provider>
-            <SafeAreaView>
-                <ScrollView
-                    style={{height: '100%'}}
-                    refreshControl={
-                        <RefreshControl
-                            refreshing={refreshState.refreshState}
-                            tintColor='#a97937'
-                            title= {refreshState.refreshState? '刷新中....':'下拉刷新'}
-                            onRefresh={onRefresh} />
-                    }>
-                    <View>
-                        <Header tabs={tabs} />
-                        {tabs.map(item => {
-                            if(item.key === tabsState.key) {
-                                const CurrentPage: React.FC = components[item.key as keyof typeof components];
-                                return (
-                                    <CurrentPage />
-                                );
-                            }
-                        })}
-                    </View>
-                </ScrollView>
-            </SafeAreaView>
-        </Provider>
+        <View>
+            {tabs.map(item => {
+                if(item.key === tabsState.key) {
+                    const CurrentPage: React.FC = components[item.key as keyof typeof components];
+                    return (
+                        <CurrentPage />
+                    );
+                }
+            })}
+        </View>
     );
 };
 
-export default connect(mapStateToProps, mapDispatchProps)(NewsScreen);
+export default connect(mapStateToProps)(NewsScreen);

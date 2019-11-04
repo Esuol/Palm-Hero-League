@@ -1688,6 +1688,14 @@ acorn@^7.1.0:
   resolved "http://registry.npm.souche-inc.com/acorn/download/acorn-7.1.0.tgz#949d36f2c292535da602283586c2477c57eb2d6c"
   integrity sha1-lJ028sKSU12mAig1hsJHfFfrLWw=
 
+after-transition@0.0.4:
+  version "0.0.4"
+  resolved "http://registry.npm.souche-inc.com/after-transition/download/after-transition-0.0.4.tgz#1653560507893d820e50323ddbbaaefd2ae17555"
+  integrity sha1-FlNWBQeJPYIOUDI927qu/SrhdVU=
+  dependencies:
+    css-emitter-component "~0.1.1"
+    has-transitions "~0.3.0"
+
 aggregate-error@^3.0.0:
   version "3.0.1"
   resolved "http://registry.npm.souche-inc.com/aggregate-error/download/aggregate-error-3.0.1.tgz#db2fe7246e536f40d9b5442a39e117d7dd6a24e0"
@@ -2688,10 +2696,15 @@ compare-versions@^3.4.0:
   resolved "http://registry.npm.souche-inc.com/compare-versions/download/compare-versions-3.5.1.tgz#26e1f5cf0d48a77eced5046b9f67b6b61075a393"
   integrity sha1-JuH1zw1Ip37O1QRrn2e2thB1o5M=
 
-component-emitter@^1.2.1:
+component-emitter@^1.2.0, component-emitter@^1.2.1:
   version "1.3.0"
   resolved "http://registry.npm.souche-inc.com/component-emitter/download/component-emitter-1.3.0.tgz#16e4070fba8ae29b679f2215853ee181ab2eabc0"
   integrity sha1-FuQHD7qK4ptnnyIVhT7hgasuq8A=
+
+component-query@0.0.3:
+  version "0.0.3"
+  resolved "http://registry.npm.souche-inc.com/component-query/download/component-query-0.0.3.tgz#07f49dab7071fa9606725df53e607f468acdaacf"
+  integrity sha1-B/Sdq3Bx+pYGcl31PmB/RorNqs8=
 
 compressible@~2.0.16:
   version "2.0.17"
@@ -2849,6 +2862,18 @@ crypto-random-string@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.souche-inc.com/crypto-random-string/download/crypto-random-string-1.0.0.tgz#a230f64f568310e1498009940790ec99545bca7e"
   integrity sha1-ojD2T1aDEOFJgAmUB5DsmVRbyn4=
+
+css-ease@0.0.1:
+  version "0.0.1"
+  resolved "http://registry.npm.souche-inc.com/css-ease/download/css-ease-0.0.1.tgz#537679b67c9fc7c52968825b6fdd21f7492ca86c"
+  integrity sha1-U3Z5tnyfx8UpaIJbb90h90ksqGw=
+
+css-emitter-component@~0.1.1:
+  version "0.1.1"
+  resolved "http://registry.npm.souche-inc.com/css-emitter-component/download/css-emitter-component-0.1.1.tgz#fb5e4c4dab3cd62c930acac837b6e34d87ab2a8e"
+  integrity sha1-+15MTas81iyTCsrIN7bjTYerKo4=
+  dependencies:
+    event-component "~0.1.0"
 
 cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0":
   version "0.3.8"
@@ -3573,6 +3598,11 @@ etag@~1.8.1:
   version "1.8.1"
   resolved "http://registry.npm.souche-inc.com/etag/download/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
+
+event-component@~0.1.0:
+  version "0.1.0"
+  resolved "http://registry.npm.souche-inc.com/event-component/download/event-component-0.1.0.tgz#80455579d134ab27e3bb80bb2869bf96a76e9e68"
+  integrity sha1-gEVVedE0qyfju4C7KGm/lqdunmg=
 
 event-target-shim@^5.0.0, event-target-shim@^5.0.1:
   version "5.0.1"
@@ -4478,6 +4508,18 @@ has-symbols@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.souche-inc.com/has-symbols/download/has-symbols-1.0.0.tgz#ba1a8f1af2a0fc39650f5c850367704122063b44"
   integrity sha1-uhqPGvKg/DllD1yFA2dwQSIGO0Q=
+
+has-transitions@~0.3.0:
+  version "0.3.0"
+  resolved "http://registry.npm.souche-inc.com/has-transitions/download/has-transitions-0.3.0.tgz#066437c589613a8d7ba0aaa3cbd408eccb408f10"
+  integrity sha1-BmQ3xYlhOo17oKqjy9QI7MtAjxA=
+
+has-translate3d@0.0.3:
+  version "0.0.3"
+  resolved "http://registry.npm.souche-inc.com/has-translate3d/download/has-translate3d-0.0.3.tgz#ee0157ad5b4ca8a1a33514a9e7ef45415a132103"
+  integrity sha1-7gFXrVtMqKGjNRSp5+9FQVoTIQM=
+  dependencies:
+    transform-property "0.0.1"
 
 has-unicode@^2.0.0:
   version "2.0.1"
@@ -6614,6 +6656,17 @@ morgan@^1.9.0:
     depd "~1.1.2"
     on-finished "~2.3.0"
     on-headers "~1.0.1"
+
+move-js@^0.5.0:
+  version "0.5.0"
+  resolved "http://registry.npm.souche-inc.com/move-js/download/move-js-0.5.0.tgz#19f42dee61fe6ae9252436c27796c122614c3d2c"
+  integrity sha1-GfQt7mH+auklJDbCd5bBImFMPSw=
+  dependencies:
+    after-transition "0.0.4"
+    component-emitter "^1.2.0"
+    component-query "0.0.3"
+    css-ease "0.0.1"
+    has-translate3d "0.0.3"
 
 mri@^1.1.4:
   version "1.1.4"
@@ -9589,6 +9642,11 @@ tr46@^1.0.1:
   integrity sha1-qLE/1r/SSJUZZ0zN5VujaTtwbQk=
   dependencies:
     punycode "^2.1.0"
+
+transform-property@0.0.1:
+  version "0.0.1"
+  resolved "http://registry.npm.souche-inc.com/transform-property/download/transform-property-0.0.1.tgz#4863662f9d5e5bb8f0c00648eff08beb14fd65f2"
+  integrity sha1-SGNmL51eW7jwwAZI7/CL6xT9ZfI=
 
 trim-newlines@^1.0.0:
   version "1.0.0"
