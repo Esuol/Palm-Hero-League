@@ -4,9 +4,6 @@ import { WingBlank, Icon } from '@ant-design/react-native';
 import Tabs from './tab';
 
 const S = StyleSheet.create({
-    container: {
-
-    },
     wrap: {
         flex: 1,
         flexDirection: "row",
@@ -36,11 +33,10 @@ interface Props {
     tabs: { title: string; key: string }[];
 }
 
-
 const Header: React.SFC<Props> = (props: Props) => {
     const { tabs } = props;
     return (
-        <View style={S.container}>
+        <View>
             <WingBlank size="md" style={S.wrap}>
                 <View style={S.left}>
                     <Image
@@ -56,10 +52,7 @@ const Header: React.SFC<Props> = (props: Props) => {
                 </View>
             </WingBlank>
         </View>
-
     );
 };
-
-
 
 export default Header;
