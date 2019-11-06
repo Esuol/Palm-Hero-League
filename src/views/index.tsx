@@ -78,9 +78,9 @@ const NewsScreen: React.SFC<Props> = (props: Props) => {
                     }>
                     <View>
                         <Header
-                            tabs={pickTabs(name)}
+                            tabs={name === 'news' || name === 'ally' || name === 'tv' ? pickTabs(name) : null}
                             name={name}
-                            width={name === 'news' ? 70 : name === 'ally' ? 50: 40 }
+                            width={name === 'news' || name === 'shop' || name === 'record' ? 70 : name === 'ally' ? 50: 40 }
                         />
                         {
                             pages.map(item => {

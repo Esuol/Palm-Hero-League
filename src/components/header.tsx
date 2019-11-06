@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
-import { WingBlank, Icon } from '@ant-design/react-native';
+import { WingBlank, Icon, SearchBar } from '@ant-design/react-native';
 import Tabs from './tab';
 
 const S = StyleSheet.create({
@@ -21,13 +21,15 @@ const S = StyleSheet.create({
 });
 
 interface Props {
-    tabs: { title: string; key: string }[];
+    tabs?: { title: string; key: string }[];
     name: string;
     width: number;
 }
 
-const Header: React.SFC<Props> = (props: Props) => {
+const Header: React.FC<Props> = (props: Props) => {
     const { tabs, name, width } = props;
+    const [ product, setProduct ] = useState<string>('');
+
     return (
         <View>
             <WingBlank size="md" style={S.wrap}>
@@ -38,7 +40,16 @@ const Header: React.SFC<Props> = (props: Props) => {
                     />
                 </View>
                 <View style={{width: `${width}%`}}>
-                    <Tabs tabs={tabs} />
+                    {tabs &&  <Tabs tabs={tabs} /> }
+                    {name === 'shop' &&
+                        <View style={{ backgroundColor: '#FFF ' }}>
+                            <SearchBar
+                                style={{ backgroundColor: '#E9EAEC', borderRadius: 6}}
+                                value={product}
+                                placeholder="搜索"
+                            />
+                        </View>
+                    }
                 </View>
                 <View style={{width: `${(100 - width)/2}%`, alignItems: "flex-end",}}>
                     <Icon style={S.icon} name="wechat" size="lg" color="#a97937" />
