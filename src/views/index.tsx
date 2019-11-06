@@ -36,7 +36,6 @@ const mapDispatchProps = (dispatch: any) => {
     };
 };
 
-// const files = require.context('./tabPage', false, /\.tsx$/);
 
 function wait(timeout: number) {
     return new Promise(resolve => {

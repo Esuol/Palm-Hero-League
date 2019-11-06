@@ -1,10 +1,8 @@
 import React from "react";
 import { connect } from 'react-redux';
-import {View, SafeAreaView, ScrollView, RefreshControl} from 'react-native';
-import { Provider, Toast } from '@ant-design/react-native';
-import Header from '~/components/header';
-import {tabs} from './const';
-import {TabPrame, PullRefresh} from '~/store/action/common';
+import { View } from 'react-native';
+import { tabs } from './const';
+import { TabPrame } from '~/store/action/common';
 // tabs => 组件
 import RecommendPage from './tabPage/recommend';
 import CloudPage from './tabPage/cloud';
