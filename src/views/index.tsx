@@ -4,8 +4,12 @@ import {View, SafeAreaView, ScrollView, RefreshControl} from 'react-native';
 import { Provider, Toast } from '@ant-design/react-native';
 import Header from '../components/header';
 import {components, pages} from './const';
-import { tabs } from './news/const';
 import {TabPrame, PullRefresh} from '../store/action/common';
+
+// tabs
+import { tabs } from './news/const';
+import { allyTabs } from './ally/const';
+import { tvTabs } from './tv/const';
 
 interface Props {
     tabsState: TabPrame;
@@ -45,6 +49,11 @@ function wait(timeout: number) {
 
 const NewsScreen: React.SFC<Props> = (props: Props) => {
     const { refreshState, pullRefresh, navigation } = props;
+    const {name} = navigation.state.params;
+
+    const pickTabs: (name: string) => any = (tabname: string) => {
+        return name === 'news' ? tabs : name === 'ally' ? allyTabs : tvTabs;
+    };
 
     const onRefresh = () => {
         pullRefresh(true);
@@ -54,7 +63,6 @@ const NewsScreen: React.SFC<Props> = (props: Props) => {
             Toast.success('刷新成功', 1);
         });
     };
-
 
     return (
         <Provider>
@@ -69,7 +77,11 @@ const NewsScreen: React.SFC<Props> = (props: Props) => {
                             onRefresh={onRefresh} />
                     }>
                     <View>
-                        <Header tabs={tabs} />
+                        <Header
+                            tabs={pickTabs(name)}
+                            name={name}
+                            width={name === 'news' ? 70 : name === 'ally' ? 50: 40 }
+                        />
                         {
                             pages.map(item => {
                                 if(navigation.state.params.name === item.page) {

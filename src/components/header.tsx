@@ -8,15 +8,6 @@ const S = StyleSheet.create({
         flex: 1,
         flexDirection: "row",
     },
-    right: {
-        width: '15%'
-    },
-    center: {
-        width: '70%'
-    },
-    left: {
-        width: '15%'
-    },
     image: {
         width: 40,
         height: 40,
@@ -31,23 +22,25 @@ const S = StyleSheet.create({
 
 interface Props {
     tabs: { title: string; key: string }[];
+    name: string;
+    width: number;
 }
 
 const Header: React.SFC<Props> = (props: Props) => {
-    const { tabs } = props;
+    const { tabs, name, width } = props;
     return (
         <View>
             <WingBlank size="md" style={S.wrap}>
-                <View style={S.left}>
+                <View style={{width: `${(100 - width)/2}%`}}>
                     <Image
                         style={S.image}
                         source={{uri: 'https://img2.woyaogexing.com/2019/10/31/9ff4fd9097c64e8097c5e63f8b3ca1c3!400x400.jpeg'}}
                     />
                 </View>
-                <View style={S.center}>
+                <View style={{width: `${width}%`}}>
                     <Tabs tabs={tabs} />
                 </View>
-                <View style={S.right}>
+                <View style={{width: `${(100 - width)/2}%`, alignItems: "flex-end",}}>
                     <Icon style={S.icon} name="wechat" size="lg" color="#a97937" />
                 </View>
             </WingBlank>
