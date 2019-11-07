@@ -12,6 +12,10 @@ export const refreshState = {
     refreshState: false
 };
 
+export const areaState = {
+    areaState: false
+};
+
 
 
 

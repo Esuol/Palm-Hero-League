@@ -55,6 +55,10 @@ const NewsScreen: React.SFC<Props> = (props: Props) => {
         return name === 'news' ? tabs : name === 'ally' ? allyTabs : tvTabs;
     };
 
+    const pickTabsColor: (name: string) => any = (tabname: string) => {
+        return name === 'news' ? '#a97937' : '#569E9D';
+    };
+
     const onRefresh = () => {
         pullRefresh(true);
 
@@ -79,6 +83,7 @@ const NewsScreen: React.SFC<Props> = (props: Props) => {
                     <View>
                         <Header
                             tabs={name === 'news' || name === 'ally' || name === 'tv' ? pickTabs(name) : null}
+                            tabActiveColor={name === 'news' || name === 'ally' || name === 'tv' ? pickTabsColor(name) : null}
                             name={name}
                             width={name === 'news' || name === 'shop' || name === 'record' ? 70 : name === 'ally' ? 50: 40 }
                         />

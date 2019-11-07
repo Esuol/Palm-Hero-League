@@ -7,6 +7,7 @@ import { SetTabAction, TabPrame } from '~/store/action/common';
 interface Props {
     tabs: TabPrame[];
     setTabAction: (tab: TabPrame) => TabPrame;
+    tabActiveColor?: string;
 }
 
 interface State {
@@ -24,7 +25,7 @@ const mapStateToProps = (state: State) => {
 };
 
 const Tab: React.SFC<Props> = (props: Props) => {
-    const { tabs, setTabAction } = props;
+    const { tabs, setTabAction, tabActiveColor } = props;
 
     const tabClick = (tab: TabPrame, index: number) => {setTabAction(tab)};
 
@@ -33,8 +34,8 @@ const Tab: React.SFC<Props> = (props: Props) => {
             <Tabs
                 tabs={tabs} initialPage={0}
                 tabBarPosition="top"
-                tabBarActiveTextColor="#a97937"
-                tabBarUnderlineStyle={ {backgroundColor: '#a97937', height: 2, } }
+                tabBarActiveTextColor={tabActiveColor ? tabActiveColor : "#a97937"}
+                tabBarUnderlineStyle={ {backgroundColor: tabActiveColor ? tabActiveColor : "#a97937", height: 2, } }
                 onTabClick={tabClick} />
         </View>
     );
