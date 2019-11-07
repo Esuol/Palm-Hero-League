@@ -48,8 +48,9 @@ function wait(timeout: number) {
 }
 
 const NewsScreen: React.SFC<Props> = (props: Props) => {
-    const { refreshState, pullRefresh, navigation } = props;
+    const { refreshState, pullRefresh, navigation, tabsState} = props;
     const {name} = navigation.state.params;
+
 
     const pickTabs: (name: string) => any = (tabname: string) => {
         return name === 'news' ? tabs : name === 'ally' ? allyTabs : tvTabs;

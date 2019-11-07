@@ -3,7 +3,10 @@ import { createAppContainer } from "react-navigation";
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import Icon from "~/components/Icons";
 import Tabbar from "~/components/Tabbar";
+import store from '~/store';
+import { SetTabAction } from '~/store/action/common';
 
+// => 对于模块
 import NewsScreen from './news';
 import AllyScreen from './ally';
 import TVScreen from './tv';
@@ -22,19 +25,31 @@ const TabNavigator = createBottomTabNavigator({
     NewsScreen: {
         ...NewsScreen,
         navigationOptions: {
-            tabBarIcon: (props: Props) => tabbarFunc(props, "home", "资讯")
+            tabBarIcon: (props: Props) => tabbarFunc(props, "home", "资讯"),
+            tabBarOnPress: (route) => {
+                store.dispatch(SetTabAction({ title: '推荐', key: 'recommend' }));
+                route.navigation.navigate('NewsScreen');
+            }
         }
     },
     AllyScreen: {
         ...AllyScreen,
         navigationOptions: {
-            tabBarIcon: (props: Props) => tabbarFunc(props, "search", "盟友圈")
+            tabBarIcon: (props: Props) => tabbarFunc(props, "search", "盟友圈"),
+            tabBarOnPress: (route) => {
+                store.dispatch(SetTabAction({ title: '关注', key: 'attention' }));
+                route.navigation.navigate('AllyScreen');
+            }
         }
     },
     TVScreen: {
         ...TVScreen,
         navigationOptions: {
-            tabBarIcon: (props: Props) =>  tabbarFunc(props, "favorites", "电视台")
+            tabBarIcon: (props: Props) =>  tabbarFunc(props, "favorites", "电视台"),
+            tabBarOnPress: (route) => {
+                store.dispatch(SetTabAction({ title: '推荐', key: 'tvRecommend' }));
+                route.navigation.navigate('TVScreen');
+            }
         }
     },
     ShopScreen: {
