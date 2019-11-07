@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import { WingBlank, Icon, SearchBar } from '@ant-design/react-native';
+import SearchInput from '~/components/searchInput';
 import Tabs from './tab';
 
 const S = StyleSheet.create({
@@ -17,6 +18,17 @@ const S = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+
+    shopWarp: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        backgroundColor: '#ffffff'
+    },
+    shoppingCart: {
+        width: '10%',
+        marginTop: 6
     }
 });
 
@@ -28,7 +40,11 @@ interface Props {
 
 const Header: React.FC<Props> = (props: Props) => {
     const { tabs, name, width } = props;
-    const [ product, setProduct ] = useState<string>('');
+    const [ condition, setCondition] = useState<string>('');
+
+    const handleSearch = (e: string) => {
+        setCondition(e);
+    };
 
     return (
         <View>
@@ -39,15 +55,15 @@ const Header: React.FC<Props> = (props: Props) => {
                         source={{uri: 'https://img2.woyaogexing.com/2019/10/31/9ff4fd9097c64e8097c5e63f8b3ca1c3!400x400.jpeg'}}
                     />
                 </View>
-                <View style={{width: `${width}%`}}>
+                <View style={{width: `${width}%` }}>
                     {tabs &&  <Tabs tabs={tabs} /> }
                     {name === 'shop' &&
-                        <View style={{ backgroundColor: '#FFF ' }}>
-                            <SearchBar
-                                style={{ backgroundColor: '#E9EAEC', borderRadius: 6}}
-                                value={product}
-                                placeholder="搜索"
-                            />
+                        <View style={S.shopWarp}>
+                            <SearchInput
+                                value={condition}
+                                placeholder="找你喜欢的商品"
+                                handleSearch={handleSearch} />
+                            <Icon style={S.shoppingCart} name="shopping-cart" size="md" color="#a97937" />
                         </View>
                     }
                 </View>
