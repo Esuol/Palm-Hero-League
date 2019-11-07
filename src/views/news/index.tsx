@@ -52,7 +52,7 @@ const NewsScreen: React.SFC<Props> = (props: Props) => {
         <View>
             {tabs.map(item => {
                 if(item.key === tabsState.key) {
-                    const CurrentPage: React.FC = components[item.key as keyof typeof components];
+                    const CurrentPage = components[item.key as keyof typeof components];
                     return (
                         <CurrentPage />
                     );

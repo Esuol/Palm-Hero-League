@@ -1,12 +1,18 @@
 import React, {useState} from 'react';
 import { connect} from 'react-redux';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image,  } from 'react-native';
 import { WingBlank, Icon } from '@ant-design/react-native';
 import SearchInput from '~/components/searchInput';
 import Tabs from './tab';
 import { SelectArea } from '~/store/action/common';
 
 const S = StyleSheet.create({
+    header: {
+        position: "absolute",
+        top: 0,
+        zIndex: 1,
+        backgroundColor: '#fff',
+    },
     wrap: {
         flex: 1,
         flexDirection: "row",
@@ -106,7 +112,7 @@ const Header: React.FC<Props> = (props: Props) => {
     };
 
     return (
-        <View>
+        <View style={S.header}>
             <WingBlank size="md" style={S.wrap}>
                 <View style={{width: `${(100 - width)/2}%`}}>
                     <Image

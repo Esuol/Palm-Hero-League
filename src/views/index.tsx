@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
-import {View, SafeAreaView, ScrollView, RefreshControl} from 'react-native';
+import {View, SafeAreaView, ScrollView, RefreshControl, Text} from 'react-native';
 import { Provider, Toast } from '@ant-design/react-native';
 import Header from '../components/header';
 import {components, pages} from './const';
@@ -72,6 +72,14 @@ const NewsScreen: React.SFC<Props> = (props: Props) => {
     return (
         <Provider>
             <SafeAreaView>
+                <View style={{marginBottom: 50}}>
+                    <Header
+                        tabs={name === 'news' || name === 'ally' || name === 'tv' ? pickTabs(name) : null}
+                        tabActiveColor={name === 'news' || name === 'ally' || name === 'tv' ? pickTabsColor(name) : null}
+                        name={name}
+                        width={name === 'news' || name === 'shop' || name === 'record' ? 70 : name === 'ally' ? 50: 40 }
+                    />
+                </View>
                 <ScrollView
                     style={{height: '100%'}}
                     refreshControl={
@@ -81,13 +89,7 @@ const NewsScreen: React.SFC<Props> = (props: Props) => {
                             title= {refreshState.refreshState? '刷新中....':'下拉刷新'}
                             onRefresh={onRefresh} />
                     }>
-                    <View>
-                        <Header
-                            tabs={name === 'news' || name === 'ally' || name === 'tv' ? pickTabs(name) : null}
-                            tabActiveColor={name === 'news' || name === 'ally' || name === 'tv' ? pickTabsColor(name) : null}
-                            name={name}
-                            width={name === 'news' || name === 'shop' || name === 'record' ? 70 : name === 'ally' ? 50: 40 }
-                        />
+                    <View style={{ marginBottom: 60}}>
                         {
                             pages.map(item => {
                                 if(navigation.state.params.name === item.page) {
@@ -98,6 +100,13 @@ const NewsScreen: React.SFC<Props> = (props: Props) => {
                                 }
                             })
                         }
+                        <Text style={{
+                            fontSize: 14,
+                            color: '#a97937',
+                            lineHeight: 30,
+                            justifyContent: "center",
+                            textAlign: 'center'
+                        }}>已经到底部啦</Text>
                     </View>
                 </ScrollView>
             </SafeAreaView>
