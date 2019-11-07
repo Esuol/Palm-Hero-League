@@ -45,13 +45,6 @@ const mapStateToProps = (state: State) => {
 };
 
 // const files = require.context('./tabPage', false, /\.tsx$/);
-
-function wait(timeout: number) {
-    return new Promise(resolve => {
-        setTimeout(resolve, timeout);
-    });
-}
-
 const NewsScreen: React.SFC<Props> = (props: Props) => {
     const { tabsState } = props;
 
