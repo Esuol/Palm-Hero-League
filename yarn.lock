@@ -1431,7 +1431,15 @@
   resolved "http://registry.npm.souche-inc.com/@types/qs/download/@types/qs-6.5.3.tgz#1c3b71b091eaeaf5924538006b7f70603ce63d38"
   integrity sha1-HDtxsJHq6vWSRTgAa39wYDzmPTg=
 
-"@types/react-native@^0.60.21":
+"@types/react-native-vector-icons@^6.4.4":
+  version "6.4.4"
+  resolved "http://registry.npm.souche-inc.com/@types/react-native-vector-icons/download/@types/react-native-vector-icons-6.4.4.tgz#f81dcc371b74a9c408ce12f95b8f494d7543146b"
+  integrity sha1-+B3MNxt0qcQIzhL5W49JTXVDFGs=
+  dependencies:
+    "@types/react" "*"
+    "@types/react-native" "*"
+
+"@types/react-native@*", "@types/react-native@^0.60.21":
   version "0.60.22"
   resolved "http://registry.npm.souche-inc.com/@types/react-native/download/@types/react-native-0.60.22.tgz#ba199a441cb0612514244ffb1d0fe6f04c878575"
   integrity sha1-uhmaRBywYSUUJE/7HQ/m8EyHhXU=

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, I18nManager } from 'react-native';
+import { StyleSheet, Text, View, I18nManager, Alert } from 'react-native';
 
 import { FlatList, RectButton } from 'react-native-gesture-handler';
 import {DATA} from '../const/recommed';
@@ -7,7 +7,7 @@ import {DATA} from '../const/recommed';
 //  To toggle LTR/RTL uncomment the next line
 // I18nManager.allowRTL(true);
 
-import AppleStyleSwipeableRow from './AppleStyleSwipeableRow';
+import AppleStyleSwipeableRow from './rightSwipeableRow';
 import GmailStyleSwipeableRow from './leftSwipeableRow';
 
 const styles = StyleSheet.create({
@@ -43,19 +43,23 @@ const styles = StyleSheet.create({
 });
 
 
-const Row = ({ item }) => (
-    <RectButton style={styles.rectButton} onPress={() => alert(item.from)}>
-        <Text style={styles.fromText}>{item.from}</Text>
-        <Text numberOfLines={2} style={styles.messageText}>
-            {item.message}
-        </Text>
-        <Text style={styles.dateText}>
-            {item.when} {'❭'}
-      </Text>
-    </RectButton>
-);
+const Row = (props: any) => {
+    const {item} = props;
+    return (
+        <RectButton style={styles.rectButton} onPress={() => Alert.alert(item.from)}>
+            <Text style={styles.fromText}>{item.from}</Text>
+            <Text numberOfLines={2} style={styles.messageText}>
+                {item.message}
+            </Text>
+            <Text style={styles.dateText}>
+                {item.when} {'❭'}
+            </Text>
+        </RectButton>
+    );
+};
 
-const SwipeableRow = ({ item, index }) => {
+const SwipeableRow = (props: any) => {
+    const {item, index} = props;
     if (index % 2 === 0) {
         return (
             <AppleStyleSwipeableRow>
