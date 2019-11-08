@@ -4,7 +4,7 @@ import { View } from 'react-native';
 import { tabs } from './const';
 import { TabPrame } from '~/store/action/common';
 // tabs => 组件
-import RecommendPage from './tabPage/recommend';
+import RecommendPage from './tabPage/recommend/recommend';
 import CloudPage from './tabPage/cloud';
 import FinalMatchPage from './tabPage/finalMacth';
 import NewPage from './tabPage/newGame';

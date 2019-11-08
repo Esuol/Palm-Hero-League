@@ -5,6 +5,25 @@ import { RectButton } from 'react-native-gesture-handler';
 
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 
+const styles = StyleSheet.create({
+    leftAction: {
+        flex: 1,
+        backgroundColor: '#497AFC',
+        justifyContent: 'center',
+    },
+    actionText: {
+        color: 'white',
+        fontSize: 16,
+        backgroundColor: 'transparent',
+        padding: 10,
+    },
+    rightAction: {
+        alignItems: 'center',
+        flex: 1,
+        justifyContent: 'center',
+    },
+});
+
 export default class AppleStyleSwipeableRow extends Component {
   renderLeftActions = (progress, dragX) => {
       const trans = dragX.interpolate({
@@ -73,21 +92,3 @@ export default class AppleStyleSwipeableRow extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-    leftAction: {
-        flex: 1,
-        backgroundColor: '#497AFC',
-        justifyContent: 'center',
-    },
-    actionText: {
-        color: 'white',
-        fontSize: 16,
-        backgroundColor: 'transparent',
-        padding: 10,
-    },
-    rightAction: {
-        alignItems: 'center',
-        flex: 1,
-        justifyContent: 'center',
-    },
-});
