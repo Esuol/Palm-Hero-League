@@ -7,8 +7,8 @@ import {DATA} from '../const/recommed';
 //  To toggle LTR/RTL uncomment the next line
 // I18nManager.allowRTL(true);
 
-import AppleStyleSwipeableRow from './rightSwipeableRow';
-import GmailStyleSwipeableRow from './leftSwipeableRow';
+import EvenSwipeableRow from './evenSwipeableRow';
+import OddSwipeableRow from './oddSwipeableRow';
 
 const styles = StyleSheet.create({
     rectButton: {
@@ -62,15 +62,15 @@ const SwipeableRow = (props: any) => {
     const {item, index} = props;
     if (index % 2 === 0) {
         return (
-            <AppleStyleSwipeableRow>
+            <EvenSwipeableRow>
                 <Row item={item} />
-            </AppleStyleSwipeableRow>
+            </EvenSwipeableRow>
         );
     } else {
         return (
-            <GmailStyleSwipeableRow>
+            <OddSwipeableRow>
                 <Row item={item} />
-            </GmailStyleSwipeableRow>
+            </OddSwipeableRow>
         );
     }
 };

@@ -24,7 +24,11 @@ const styles = StyleSheet.create({
     },
 });
 
-const RightSwipeableRow: React.FC = (props: any) => {
+interface Props {
+    children: React.ReactChild;
+}
+
+const RightSwipeableRow: React.FC<Props> = (props: Props) => {
     const { children } = props;
     let _swipeableRow: Swipeable | null;
 
@@ -52,7 +56,7 @@ const RightSwipeableRow: React.FC = (props: any) => {
         );
     };
 
-    const renderRightAction = (text: string, color: string, x: number, progress: any) => {
+    const renderRightAction = (text: string, color: string, x: number, progress: Animated.AnimatedInterpolation) => {
         const trans = progress.interpolate({
             inputRange: [0, 1],
             outputRange: [x, 0],

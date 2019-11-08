@@ -27,7 +27,11 @@ const styles = StyleSheet.create({
     }
 });
 
-const LeftSwipeableRow: React.FC = (props: any) => {
+interface Props {
+    children: React.ReactChild;
+}
+
+const LeftSwipeableRow: React.FC<Props>= (props: Props) => {
     const { children } = props;
 
     let _swipeableRow: Swipeable | null;
@@ -36,7 +40,7 @@ const LeftSwipeableRow: React.FC = (props: any) => {
         (_swipeableRow as Swipeable).close();
     };
 
-    const renderLeftActions = (progress: any, dragX: any) => {
+    const renderLeftActions = (progress: Animated.AnimatedInterpolation, dragX: Animated.AnimatedInterpolation) => {
         const scale = dragX.interpolate({
             inputRange: [0, 80],
             outputRange: [0, 1],
@@ -54,7 +58,7 @@ const LeftSwipeableRow: React.FC = (props: any) => {
         );
     };
 
-    const renderRightActions = (progress: any, dragX: any) => {
+    const renderRightActions = (progress: Animated.AnimatedInterpolation, dragX: Animated.AnimatedInterpolation) => {
         const scale = dragX.interpolate({
             inputRange: [-80, 0],
             outputRange: [1, 0],
