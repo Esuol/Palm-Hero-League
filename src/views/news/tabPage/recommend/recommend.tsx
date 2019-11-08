@@ -8,7 +8,7 @@ import {DATA} from '../const/recommed';
 // I18nManager.allowRTL(true);
 
 import AppleStyleSwipeableRow from './AppleStyleSwipeableRow';
-import GmailStyleSwipeableRow from './GmailStyleSwipeableRow';
+import GmailStyleSwipeableRow from './leftSwipeableRow';
 
 const styles = StyleSheet.create({
     rectButton: {
