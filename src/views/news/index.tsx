@@ -1,10 +1,11 @@
 import React from "react";
 import { connect } from 'react-redux';
 import { View } from 'react-native';
+import Swipeable from 'react-native-gesture-handler/Swipeable';
 import { tabs } from './const';
-import { TabPrame } from '~/store/action/common';
+import { TabPrame, SetTabAction } from '~/store/action/common';
 // tabs => 组件
-import RecommendPage from './tabPage/recommend/recommend';
+import RecommendPage from './tabPage/recommend';
 import CloudPage from './tabPage/cloud';
 import FinalMatchPage from './tabPage/finalMacth';
 import NewPage from './tabPage/newGame';
@@ -28,6 +29,7 @@ const components = {
 
 interface Props {
     tabsState: TabPrame;
+    setTabAction: any;
 }
 
 interface State {
@@ -44,22 +46,42 @@ const mapStateToProps = (state: State) => {
     };
 };
 
+const mapDispatchToProps = (dispatch: any) => ({
+    setTabAction: (obj: TabPrame) => dispatch(SetTabAction(obj))
+});
+
 // const files = require.context('./tabPage', false, /\.tsx$/);
 const NewsScreen: React.SFC<Props> = (props: Props) => {
-    const { tabsState } = props;
+    const { tabsState, setTabAction } = props;
+
+    let _swipeableRow: Swipeable | null;
+
+    const renderRightActions = () => {
+        // setTimeout(() => {
+        //     setTabAction({title: '总决赛', key: 'finalMatch' });
+        // }, 100);
+        console.warn(1);
+    };
 
     return (
-        <View>
-            {tabs.map(item => {
-                if(item.key === tabsState.key) {
-                    const CurrentPage = components[item.key as keyof typeof components];
-                    return (
-                        <CurrentPage />
-                    );
-                }
-            })}
-        </View>
+        <Swipeable
+            ref={node => {_swipeableRow = node}}
+            friction={2}
+            leftThreshold={80}
+            rightThreshold={40}
+            renderRightActions={renderRightActions}>
+            <View>
+                {tabs.map(item => {
+                    if(item.key === tabsState.key) {
+                        const CurrentPage = components[item.key as keyof typeof components];
+                        return (
+                            <CurrentPage />
+                        );
+                    }
+                })}
+            </View>
+        </Swipeable>
     );
 };
 
-export default connect(mapStateToProps)(NewsScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(NewsScreen);
