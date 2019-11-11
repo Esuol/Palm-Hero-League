@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import { connect} from 'react-redux';
-import { View, Text, StyleSheet, Image,  } from 'react-native';
+import { View, Text, StyleSheet, Image, Touchable   } from 'react-native';
 import { WingBlank, Icon } from '@ant-design/react-native';
 import SearchInput from '~/components/searchInput';
 import Tabs from './tab';
 import { SelectArea } from '~/store/action/common';
+import { TouchableHighlight } from 'react-native-gesture-handler';
 
 const S = StyleSheet.create({
     header: {
@@ -72,6 +73,7 @@ interface Props {
         areaState: boolean;
     };
     selectArea: any;
+    openDrawer: () => void;
 }
 
 interface State {
@@ -99,7 +101,8 @@ const Header: React.FC<Props> = (props: Props) => {
         width,
         tabActiveColor,
         areaState,
-        selectArea
+        selectArea,
+        openDrawer
     } = props;
 
     const [ condition, setCondition] = useState<string>('');
@@ -116,10 +119,13 @@ const Header: React.FC<Props> = (props: Props) => {
         <View style={S.header}>
             <WingBlank size="md" style={S.wrap}>
                 <View style={{width: `${(100 - width)/2}%`}}>
-                    <Image
-                        style={S.image}
-                        source={{uri: 'https://img2.woyaogexing.com/2019/10/31/9ff4fd9097c64e8097c5e63f8b3ca1c3!400x400.jpeg'}}
-                    />
+                    <TouchableHighlight onPress={openDrawer}>
+                        <Image
+                            style={S.image}
+                            source={{uri: 'https://img2.woyaogexing.com/2019/10/31/9ff4fd9097c64e8097c5e63f8b3ca1c3!400x400.jpeg'}}
+
+                        />
+                    </TouchableHighlight>
                 </View>
                 <View style={{width: `${width}%`, marginTop: -5 }}>
                     {tabs &&  <Tabs tabs={tabs} tabActiveColor={tabActiveColor} /> }
