@@ -56,31 +56,24 @@ const NewsScreen: React.SFC<Props> = (props: Props) => {
 
     let _swipeableRow: Swipeable | null;
 
-    const renderRightActions = () => {
-        // setTimeout(() => {
-        //     setTabAction({title: '总决赛', key: 'finalMatch' });
-        // }, 100);
-        console.warn(1);
-    };
+    // const renderRightActions = () => {
+    //     // setTimeout(() => {
+    //     //     setTabAction({title: '总决赛', key: 'finalMatch' });
+    //     // }, 100);
+    //     setTabAction({title: '总决赛', key: 'finalMatch' });
+    // };
 
     return (
-        <Swipeable
-            ref={node => {_swipeableRow = node}}
-            friction={2}
-            leftThreshold={80}
-            rightThreshold={40}
-            renderRightActions={renderRightActions}>
-            <View>
-                {tabs.map(item => {
-                    if(item.key === tabsState.key) {
-                        const CurrentPage = components[item.key as keyof typeof components];
-                        return (
-                            <CurrentPage />
-                        );
-                    }
-                })}
-            </View>
-        </Swipeable>
+        <View>
+            {tabs.map(item => {
+                if(item.key === tabsState.key) {
+                    const CurrentPage = components[item.key as keyof typeof components];
+                    return (
+                        <CurrentPage />
+                    );
+                }
+            })}
+        </View>
     );
 };
 
