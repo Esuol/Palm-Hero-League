@@ -1,4 +1,4 @@
-import RecordScreen from '../views';
+import RecordScreen from '../views/mine';
 
 export default {
     screen: RecordScreen,
